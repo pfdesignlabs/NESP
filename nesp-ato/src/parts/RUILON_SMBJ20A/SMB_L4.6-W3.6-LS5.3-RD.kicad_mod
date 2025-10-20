@@ -1,0 +1,137 @@
+(footprint "RUILON_SMBJ20A:SMB_L4.6-W3.6-LS5.3-RD"
+	(version 20241229)
+	(generator "faebryk_convert")
+	(generator_version "v5")
+	(layer "F.Cu")
+	(tedit "5DC5F6A4")
+	(uuid "d22ea345-682d-40f0-839e-be0a9ad8f17f")
+	(property "Reference" "REF**"
+		(at 0 -4)
+		(layer "F.SilkS")
+		(uuid "9056be9b-cbf9-4649-a0ca-2a13e5099aa0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SMB_L4.6-W3.6-LS5.3-RD"
+		(at 0 4)
+		(layer "F.Fab")
+		(uuid "f21b10e2-710c-4979-bbec-2200dd18bbe3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center -2.65 1.8)
+		(end -2.62 1.8)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(locked no)
+		(uuid "71c88e47-5510-4e69-ae2c-279d0499ba1b")
+	)
+	(fp_line
+		(start -1.02 -1.89)
+		(end -1.02 1.89)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "3ab11a4f-9b2f-4640-908c-7214c7371409")
+	)
+	(fp_line
+		(start -2.74 -1.89)
+		(end 2.74 -1.89)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "ce7f5277-b076-4639-8b1d-40590bcdad31")
+	)
+	(fp_line
+		(start -2.74 1.89)
+		(end 2.74 1.89)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "7f624655-3100-410f-bc3a-1fe1eea7548d")
+	)
+	(fp_line
+		(start 2.74 -1.89)
+		(end 2.74 -1.3)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "986b5e77-3ba0-4109-bfdf-c788df80a0ff")
+	)
+	(fp_line
+		(start 2.74 1.89)
+		(end 2.74 1.3)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "f50e09d1-dbdd-480a-9ff9-31d013c60213")
+	)
+	(fp_text user "%R"
+		(at 0 0)
+		(layer "F.Fab")
+		(uuid "31add5ae-b027-45e6-82f0-563597cadca5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "2" smd rect
+		(at 2.36 0 0)
+		(size 2.05 2.19)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "e76cf858-e359-4657-bd34-963535d3ecd4")
+	)
+	(pad "1" smd rect
+		(at -2.36 0 0)
+		(size 2.05 2.19)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "9917bf3e-6ec5-40df-b166-77df651d0e6d")
+	)
+	(model "${KIPRJMOD}/../../../src/parts/RUILON_SMBJ20A/SMB_L4.6-W3.6-LS5.3-RD.step"
+		(offset
+			(xyz 0 0 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(embedded_fonts no)
+)

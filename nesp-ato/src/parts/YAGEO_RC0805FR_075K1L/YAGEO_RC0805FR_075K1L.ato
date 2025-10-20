@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component YAGEO_RC0805FR_075K1L_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C84375", date="2025-10-16T09:03:20.213170+00:00", checksum="7abf62a8493facd90757f1eac55aa503464b4b03bb78ce11b0fe00662d3d33e0">
+
+    trait is_atomic_part<manufacturer="YAGEO", partnumber="RC0805FR-075K1L", footprint="R0805.kicad_mod", symbol="RC0805FR-075K1L.kicad_sym", model="R0805_L2.0-W1.3-H0.6.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C84375", manufacturer="YAGEO", partno="RC0805FR-075K1L">
+    trait has_designator_prefix<prefix="R">
+
+    # pins
+    pin 2
+    pin 1

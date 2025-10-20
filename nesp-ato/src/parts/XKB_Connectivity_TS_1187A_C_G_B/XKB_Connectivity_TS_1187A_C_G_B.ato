@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component XKB_Connectivity_TS_1187A_C_G_B_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C318886", date="2025-10-16T09:28:53.267564+00:00", checksum="6f74cdba1ac2fe10290e3044d57c0f22fad951e793f97d4580bbe212e64f6d55">
+
+    trait is_atomic_part<manufacturer="XKB Connectivity", partnumber="TS-1187A-C-G-B", footprint="SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H3.5.kicad_mod", symbol="TS-1187A-C-G-A.kicad_sym", model="SW-SMD_4P-L5.1-W5.1-P3.70-LS6.5-TL_H3.5.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C318886", manufacturer="XKB Connectivity", partno="TS-1187A-C-G-B">
+    trait has_designator_prefix<prefix="SW">
+
+    # pins
+    signal A ~ pin 1
+    signal B ~ pin 2
+    signal C ~ pin 3
+    signal D ~ pin 4

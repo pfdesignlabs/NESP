@@ -1,0 +1,50 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import is_atomic_part
+
+
+component bq24074:
+    trait has_designator_prefix<prefix="U">
+    trait is_atomic_part<
+        manufacturer="Texas Instruments",
+        partnumber="BQ24074RGT",
+        footprint="../../layout/footprints.pretty/RGT16_1P7X1P7.kicad_mod",
+        symbol="BQ24074RGTT",
+        model="../../layout/3d/BQ24074RGTT.step"
+    >
+    pin IN
+    pin SYS
+    pin BAT
+    pin GND
+    pin TS
+    pin PROG
+    pin STAT
+    pin PG
+    pin ILIM
+
+
+component mpm3610a:
+    trait has_designator_prefix<prefix="U">
+    trait is_atomic_part<
+        manufacturer="Monolithic Power Systems",
+        partnumber="MPM3610AGQV",
+        footprint="../../layout/footprints.pretty/CONV_MPM3620AGQV-P.kicad_mod",
+        symbol="MPM3610AGQV-P",
+        model="../../layout/3d/MPM3610AGQV.step"
+    >
+    pin VIN
+    pin VOUT
+    pin GND
+    pin EN
+
+
+component jst_ph2:
+    trait has_designator_prefix<prefix="J">
+    trait is_atomic_part<
+        manufacturer="JST",
+        partnumber="B2B-PH-SM4-TBLFSN",
+        footprint="../../layout/footprints.pretty/JST_Sales_America_Inc.-B2B-PH-SM4-TBLFSN-0.kicad_mod",
+        symbol="Connector_Generic:Conn_01x02"
+    >
+    pin BATT_PLUS
+    pin GND

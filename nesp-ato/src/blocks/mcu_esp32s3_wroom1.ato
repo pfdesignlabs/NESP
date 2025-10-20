@@ -1,0 +1,88 @@
+from "parts/mcu.ato" import esp32s3_wroom1
+from "faebryk/library/passives/capacitor.ato" import Capacitor
+
+
+module MCU_ESP32S3:
+    signal net_3V3
+    net_3V3.override_net_name = "3V3"
+    signal GND
+    signal USB_DP
+    signal USB_DM
+    signal SPI_SCK
+    signal SPI_MOSI
+    signal SPI_MISO
+    signal CS_TFT
+    signal DC
+    signal RST_TFT
+    signal BL_EN
+    signal CS_SD
+    signal I2S_BCLK
+    signal I2S_LRCK
+    signal I2S_DIN
+    signal BTN_UP
+    signal BTN_DOWN
+    signal BTN_LEFT
+    signal BTN_RIGHT
+    signal BTN_A
+    signal BTN_B
+    signal BTN_START
+    signal BTN_SELECT
+    signal BTN_VOLUP
+    signal BTN_VOLDN
+    signal BTN_PWR
+    signal LED_PWR
+    signal LED_USER
+
+    U1 = new esp32s3_wroom1
+    C_U1a = new Capacitor
+    C_U1a.capacitance = 0.1uF +/- 10%
+    C_U1a.package = "0603"
+    C_U1b = new Capacitor
+    C_U1b.capacitance = 10uF +/- 20%
+    C_U1b.package = "1206"
+
+    U1.VDD3V3_1 ~ net_3V3
+    U1.VDD3V3_2 ~ net_3V3
+    U1.VDD3V3_3 ~ net_3V3
+    U1.VDD3V3_4 ~ net_3V3
+
+    U1.GND_1 ~ GND
+    U1.GND_2 ~ GND
+    U1.GND_3 ~ GND
+    U1.GND_4 ~ GND
+
+    U1.USB_DP ~ USB_DP
+    U1.USB_DM ~ USB_DM
+
+    C_U1a.A ~ net_3V3
+    C_U1a.B ~ GND
+    C_U1b.A ~ net_3V3
+    C_U1b.B ~ GND
+
+    U1.IO36 ~ SPI_SCK
+    U1.IO35 ~ SPI_MOSI
+    U1.IO37 ~ SPI_MISO
+    U1.IO34 ~ CS_TFT
+    U1.IO33 ~ DC
+    U1.IO32 ~ RST_TFT
+    U1.IO31 ~ CS_SD
+    U1.IO13 ~ BL_EN
+
+    U1.IO17 ~ I2S_BCLK
+    U1.IO16 ~ I2S_LRCK
+    U1.IO15 ~ I2S_DIN
+
+    U1.IO4 ~ BTN_UP
+    U1.IO5 ~ BTN_DOWN
+    U1.IO6 ~ BTN_LEFT
+    U1.IO7 ~ BTN_RIGHT
+    U1.IO8 ~ BTN_A
+    U1.IO9 ~ BTN_B
+    U1.IO10 ~ BTN_START
+    U1.IO11 ~ BTN_SELECT
+    U1.IO12 ~ BTN_VOLUP
+    U1.IO14 ~ BTN_VOLDN
+    U1.IO18 ~ BTN_PWR
+
+    U1.LED_PWR ~ LED_PWR
+    U1.LED_USER ~ LED_USER

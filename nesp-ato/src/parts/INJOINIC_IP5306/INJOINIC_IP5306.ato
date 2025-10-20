@@ -1,0 +1,25 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component INJOINIC_IP5306_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C181692", date="2025-10-16T09:25:07.879354+00:00", checksum="90f17cb44ee428696c63d44856be557ced7845c14a31b2c0d0059b32793f68f5">
+
+    trait is_atomic_part<manufacturer="INJOINIC", partnumber="IP5306", footprint="ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP.kicad_mod", symbol="IP5306.kicad_sym", model="ESOP-8_L4.9-W3.9-H1.6-LS6.0-P1.27.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C181692", manufacturer="INJOINIC", partno="IP5306">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal BAT ~ pin 6
+    signal EP ~ pin 9
+    signal KEY ~ pin 5
+    signal LED1 ~ pin 2
+    signal LED2 ~ pin 3
+    signal LED3 ~ pin 4
+    signal SW ~ pin 7
+    signal VIN ~ pin 1
+    signal VOUT ~ pin 8

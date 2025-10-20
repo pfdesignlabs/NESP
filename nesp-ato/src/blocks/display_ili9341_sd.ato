@@ -1,0 +1,92 @@
+from "parts/display.ato" import tft_ili9341_sd_module
+from "faebryk/library/passives/resistor.ato" import Resistor
+from "faebryk/library/passives/capacitor.ato" import Capacitor
+
+
+module DisplayBlock:
+    signal net_3V3
+    net_3V3.override_net_name = "3V3"
+    signal GND
+    signal SPI_SCK
+    signal SPI_MOSI
+    signal SPI_MISO
+    signal CS_TFT
+    signal DC
+    signal RST_TFT
+    signal BL_EN
+    signal CS_SD
+
+    DISP1 = new tft_ili9341_sd_module
+    RS_SCK = new Resistor
+    RS_SCK.resistance = 22ohm +/- 1%
+    RS_SCK.package = "0603"
+
+    RS_MOSI = new Resistor
+    RS_MOSI.resistance = 22ohm +/- 1%
+    RS_MOSI.package = "0603"
+    
+    RS_DC = new Resistor
+    RS_DC.resistance = 22ohm +/- 1%
+    RS_DC.package = "0603"
+
+    RS_CS = new Resistor
+    RS_CS.resistance = 22ohm +/- 1%
+    RS_CS.package = "0603"
+
+    R_PWM = new Resistor
+    R_PWM.resistance = 100ohm +/- 1%
+    R_PWM.package = "0603"
+
+    R_PU_TFT = new Resistor
+    R_PU_TFT.resistance = 47kohm +/- 1%
+    R_PU_TFT.package = "0603"
+
+    R_PU_SD = new Resistor
+    R_PU_SD.resistance = 47kohm +/- 1%
+    R_PU_SD.package = "0603"
+    
+    C_BLK = new Capacitor
+    C_BLK.capacitance = 100uF +/- 20%
+    C_BLK.package = "6.3mmx5.8mm" 
+
+    C_VCC = new Capacitor
+    C_VCC.capacitance = 10uF +/- 20%
+    C_VCC.package = "1206"
+
+    C_VCCs = new Capacitor
+    C_VCCs.capacitance = 100nF +/- 10%
+    C_VCCs.package = "0603"
+
+    DISP1.VCC ~ net_3V3
+    DISP1.GND ~ GND
+    C_BLK.A ~ net_3V3
+    C_BLK.B ~ GND
+    C_VCC.A ~ net_3V3
+    C_VCC.B ~ GND
+    C_VCCs.A ~ net_3V3
+    C_VCCs.B ~ GND
+
+    RS_SCK.A ~ SPI_SCK
+    RS_SCK.B ~ DISP1.SCK
+    RS_MOSI.A ~ SPI_MOSI
+    RS_MOSI.B ~ DISP1.MOSI
+    DISP1.MISO ~ SPI_MISO
+
+    RS_CS.A ~ CS_TFT
+    RS_CS.B ~ DISP1.CS_TFT
+    RS_DC.A ~ DC
+    RS_DC.B ~ DISP1.DC
+
+    DISP1.RST ~ RST_TFT
+    R_PWM.A ~ BL_EN
+    R_PWM.B ~ DISP1.BLEN
+
+    DISP1.SD_CLK ~ SPI_SCK
+    DISP1.SD_CMD ~ SPI_MOSI
+    DISP1.SD_D0 ~ SPI_MISO
+    DISP1.SD_CS ~ CS_SD
+
+    R_PU_TFT.A ~ CS_TFT
+    R_PU_TFT.B ~ net_3V3
+    R_PU_SD.A ~ CS_SD
+    R_PU_SD.B ~ net_3V3

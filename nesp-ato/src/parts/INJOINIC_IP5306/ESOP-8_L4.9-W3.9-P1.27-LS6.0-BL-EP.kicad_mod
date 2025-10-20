@@ -1,0 +1,213 @@
+(footprint "INJOINIC_IP5306:ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP"
+	(version 20241229)
+	(generator "faebryk_convert")
+	(generator_version "v5")
+	(layer "F.Cu")
+	(tedit "5DC5F6A4")
+	(uuid "b7b520a4-933a-4fc3-9dc4-9679fc9537b3")
+	(property "Reference" "REF**"
+		(at 0 -6.91)
+		(layer "F.SilkS")
+		(uuid "46797717-b1b8-46cf-9ce5-8d41d7625144")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "ESOP-8_L4.9-W3.9-P1.27-LS6.0-BL-EP"
+		(at 0 6.91)
+		(layer "F.Fab")
+		(uuid "1f2b0e5b-ace6-4ee3-b45f-ae1303f5882c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center -2.45 2.95)
+		(end -2.42 2.95)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(locked no)
+		(uuid "cf4a62c3-f874-4c93-867a-6f5947475196")
+	)
+	(fp_circle
+		(center -1.96 3.28)
+		(end -1.81 3.28)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(layer "Cmts.User")
+		(locked no)
+		(uuid "2dc8bf1e-0e78-4e73-bd4a-90cafed2e163")
+	)
+	(fp_circle
+		(center -3.03 2.5)
+		(end -2.86 2.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(locked no)
+		(uuid "d9ffb00c-45fb-47b3-8929-5d905739c7c3")
+	)
+	(fp_line
+		(start -2.55 -2.05)
+		(end 2.55 -2.05)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "44d7ae6a-f048-4e03-9d9f-521df3d6f5d2")
+	)
+	(fp_line
+		(start 2.55 -2.05)
+		(end 2.55 2.05)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "6986788b-8d31-4e7c-8ed5-0146af307416")
+	)
+	(fp_line
+		(start 2.55 2.05)
+		(end -2.55 2.05)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "0e5ce293-75d3-4046-9e2f-818411be8828")
+	)
+	(fp_line
+		(start -2.55 -0.8)
+		(end -2.55 -2.05)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "a96e0178-f0c6-49dc-b352-a33966cd22d7")
+	)
+	(fp_line
+		(start -2.55 0.8)
+		(end -2.55 2.05)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "e57f509b-d49a-489f-b2cf-d6b4d93a06d8")
+	)
+	(fp_arc
+		(start -2.5 0.8)
+		(mid -1.9885861 -0.0030851)
+		(end -2.5056092 -0.8025705)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(locked no)
+		(uuid "3d325fc7-0a43-4320-b811-53ccbde1a15c")
+	)
+	(fp_text user "%R"
+		(at 0 0)
+		(layer "F.Fab")
+		(uuid "4efbb429-76a8-4892-ac88-63797f470982")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.91 2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "7e2d4564-567f-44a7-b2d0-7357ae29593f")
+	)
+	(pad "2" smd rect
+		(at -0.64 2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "b76c8117-13fe-4b1d-93c2-f1d347dc8e62")
+	)
+	(pad "3" smd rect
+		(at 0.64 2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "0b2752ad-7f4b-4a32-9a28-afcf088fcae9")
+	)
+	(pad "4" smd rect
+		(at 1.91 2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "67cf2ae4-7f7b-481d-aae9-0a3f8592f11e")
+	)
+	(pad "5" smd rect
+		(at 1.91 -2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "f6f7f691-614f-4ad2-8845-fc7dc6b90077")
+	)
+	(pad "6" smd rect
+		(at 0.64 -2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "e11e71e7-150e-4cd0-b04a-71a32c4c70ba")
+	)
+	(pad "7" smd rect
+		(at -0.64 -2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "aec9db12-ff3d-4f3e-b92a-0489633a0ed8")
+	)
+	(pad "8" smd rect
+		(at -1.91 -2.91 0)
+		(size 0.6 1.2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "d8f49dd5-1257-4833-9584-9b9094bc2047")
+	)
+	(pad "9" smd rect
+		(at 0 0 180)
+		(size 3.3 2.4)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "dca6efa5-aff9-4574-b139-3e105a2aabb3")
+	)
+	(model "${KIPRJMOD}/../../../src/parts/INJOINIC_IP5306/ESOP-8_L4.9-W3.9-H1.6-LS6.0-P1.27.step"
+		(offset
+			(xyz 0 0 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 270)
+		)
+	)
+	(embedded_fonts no)
+)

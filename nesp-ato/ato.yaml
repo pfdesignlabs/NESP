@@ -1,0 +1,12 @@
+requires-atopile: "^0.12.4"
+
+paths:
+  src: ./src
+  layout: ./layout
+
+builds:
+  nesp:
+    entry: src/nesp.ato:NESP
+    paths:
+      layout: build/kicad/NESP
+      output_base: build/kicad/NESP

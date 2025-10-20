@@ -1,0 +1,18 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component onsemi_1SMA5916BT3G_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C146725", date="2025-10-16T09:29:20.928091+00:00", checksum="79ee09664f2f6b2c73e18c259370b211df4a56d7868346970c77a7957fbf45f6">
+
+    trait is_atomic_part<manufacturer="onsemi", partnumber="1SMA5916BT3G", footprint="SMA_L4.4-W2.6-LS5.0-RD.kicad_mod", symbol="1SMA5916BT3G.kicad_sym", model="SMA_L4.4-W2.6-LS5.0-RD.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C146725", manufacturer="onsemi", partno="1SMA5916BT3G">
+    trait has_designator_prefix<prefix="D">
+
+    # pins
+    signal A ~ pin 2
+    signal K ~ pin 1

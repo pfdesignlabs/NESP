@@ -1,0 +1,226 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import is_atomic_part
+
+
+component resistor:
+    trait has_designator_prefix<prefix="R">
+    trait is_atomic_part<
+        manufacturer="Yageo",
+        partnumber="RC0603FR-0710KL",
+        footprint="../../layout/footprints.pretty/Yageo-RC0603-0.55-02_2018-10-MFG.kicad_mod",
+        symbol="Device:R",
+        model="../../layout/3d/YAGEO_-_RC0603FR-0710KL.step"
+    >
+    value = "1k"
+    tolerance = "1%"
+    power = "0.1W"
+    pin A
+    pin B
+
+
+component resistor_0805:
+    trait has_designator_prefix<prefix="R">
+    trait is_atomic_part<
+        manufacturer="Yageo",
+        partnumber="RC0805FR-075K1L",
+        footprint="../../layout/footprints.pretty/Yageo-RC0805-0-0-MFG.kicad_mod",
+        symbol="Device:R",
+        model="../../layout/3d/Yageo_-_RC0805FR-075K1L.step"
+    >
+    value = "5.1k"
+    tolerance = "1%"
+    power = "0.125W"
+    pin A
+    pin B
+
+
+component capacitor:
+    trait has_designator_prefix<prefix="C">
+    trait is_atomic_part<
+        manufacturer="Samsung Electro-Mechanics",
+        partnumber="CL10B104KB8NNNC",
+        footprint="../../layout/footprints.pretty/Samsung-CL10-0-0-IPC_B.kicad_mod",
+        symbol="Device:C",
+        model="../../layout/3d/Samsung_-_CL10B104KB8NNNC.step"
+    >
+    value = "100n"
+    dielectric = "X5R"
+    voltage = "16V"
+    pin A
+    pin B
+
+
+component bulk_capacitor:
+    trait has_designator_prefix<prefix="C">
+    trait is_atomic_part<
+        manufacturer="Murata",
+        partnumber="GRM32DR61E106KA12L",
+        footprint="../../layout/footprints.pretty/Murata-GRM32-0-0-0.kicad_mod",
+        symbol="Device:C",
+        model="../../layout/3d/Murata_-_GRM32DR61E106KA12L.step"
+    >
+    value = "22u"
+    dielectric = "X5R"
+    voltage = "10V"
+    pin A
+    pin B
+
+
+component electrolytic_cap:
+    trait has_designator_prefix<prefix="C">
+    trait is_atomic_part<
+        manufacturer="KEMET",
+        partnumber="T491A107K010AT",
+        footprint="../../layout/footprints.pretty/CP_EIA-3528-21_Kemet-B.kicad_mod",
+        symbol="Device:CP"
+    >
+    value = "100u"
+    voltage = "10V"
+    pin A
+    pin B
+
+
+component decap:
+    trait has_designator_prefix<prefix="C">
+    trait is_atomic_part<
+        manufacturer="Samsung Electro-Mechanics",
+        partnumber="CL10B104KB8NNNC",
+        footprint="../../layout/footprints.pretty/Samsung-CL10-0-0-IPC_B.kicad_mod",
+        symbol="Device:C",
+        model="../../layout/3d/Samsung_-_CL10B104KB8NNNC.step"
+    >
+    value = "0.1u"
+    dielectric = "X7R"
+    pin A
+    pin B
+
+
+component inductor:
+    trait has_designator_prefix<prefix="L">
+    trait is_atomic_part<
+        manufacturer="Murata",
+        partnumber="LQH32PN2R2NN0L",
+        footprint="../../layout/footprints.pretty/Murata-LQH32PB_N0-0-0-MFG.kicad_mod",
+        symbol="Device:L",
+        model="../../layout/3d/Murata_-_LQH32PN2R2NN0L.step"
+    >
+    value = "2.2uH"
+    current = "2A"
+    pin IN
+    pin OUT
+
+
+component polyfuse:
+    trait has_designator_prefix<prefix="F">
+    trait is_atomic_part<
+        manufacturer="Bel Fuse",
+        partnumber="0ZCJ0150FF2C",
+        footprint="../../layout/footprints.pretty/Bel-0ZCJ0150FF2C-0.kicad_mod",
+        symbol="Device:Polyfuse",
+        model="../../layout/3d/Bel_-_0ZCJ0150FF2C.step"
+    >
+    hold = "1.5A"
+    pin IN
+    pin OUT
+
+
+component polyfuse_1a:
+    trait has_designator_prefix<prefix="F">
+    trait is_atomic_part<
+        manufacturer="Bel Fuse",
+        partnumber="0ZCJ0100FF2E",
+        footprint="../../layout/footprints.pretty/Bel-0ZCJ0100FF2E-0.kicad_mod",
+        symbol="Device:Polyfuse"
+    >
+    hold = "1.0A"
+    pin IN
+    pin OUT
+
+
+component led:
+    trait has_designator_prefix<prefix="D">
+    trait is_atomic_part<
+        manufacturer="Lite-On",
+        partnumber="LTST-C190KRKT",
+        footprint="../../layout/footprints.pretty/Lite-On-LTST-C190KRKT-MFG.kicad_mod",
+        symbol="Device:LED",
+        model="../../layout/3d/Lite-On_-_LTST-C190KRKT.step"
+    >
+    color = "green"
+    pin A
+    pin K
+
+
+component tvs_diode:
+    trait has_designator_prefix<prefix="D">
+    trait is_atomic_part<
+        manufacturer="Vishay",
+        partnumber="SMAJ5.0A",
+        footprint="../../layout/footprints.pretty/Vishay_Semiconductor-SMAJ5.0A-E3_5A-Level_B.kicad_mod",
+        symbol="Device:D",
+        model="../../layout/3d/5A.step"
+    >
+    type = "SMAJ5.0A"
+    pin A
+    pin K
+
+
+component esd_array_4ch:
+    trait has_designator_prefix<prefix="U">
+    trait is_atomic_part<
+        manufacturer="Nexperia",
+        partnumber="PESD5V0S4UD",
+        footprint="../../layout/footprints.pretty/SOT-23-6.kicad_mod",
+        symbol="ESD_Protection:PESD5V0S4UD"
+    >
+    device = "PESD5V0S4UD"
+    pin A1
+    pin A2
+    pin A3
+    pin A4
+    pin GND
+
+
+component tact_switch_no:
+    trait has_designator_prefix<prefix="SW">
+    trait is_atomic_part<
+        manufacturer="C&K",
+        partnumber="PTS645",
+        footprint="../../layout/footprints.pretty/SW_SPST_PTS645Sx43SMTR92.kicad_mod",
+        symbol="Switch:SW_Push"
+    >
+    series = "CT11025.0F260"
+    pin A
+    pin B
+
+
+component thermistor_10k:
+    trait has_designator_prefix<prefix="TH">
+    trait is_atomic_part<
+        manufacturer="Murata",
+        partnumber="NCP15XH103F03RC",
+        footprint="../../layout/footprints.pretty/Murata-NCP15_NCU15-0.05-0-0-MFG.kicad_mod",
+        symbol="Device:R",
+        model="../../layout/3d/Murata_-_NCP15XH103F03RC.step"
+    >
+    value = "10k"
+    beta = "3380K"
+    pin A
+    pin B
+
+
+component capacitor_10u_0603:
+    trait has_designator_prefix<prefix="C">
+    trait is_atomic_part<
+        manufacturer="Samsung Electro-Mechanics",
+        partnumber="CL10A106KP8NNNC",
+        footprint="../../layout/footprints.pretty/Samsung-CL10A106KP8NNNC-0.kicad_mod",
+        symbol="Device:C",
+        model="../../layout/3d/Samsung_-_CL10A106KP8NNNC.step"
+    >
+    value = "10u"
+    dielectric = "X5R"
+    voltage = "6.3V"
+    pin A
+    pin B

@@ -1,0 +1,137 @@
+(footprint "onsemi_1SMA5916BT3G:SMA_L4.4-W2.6-LS5.0-RD"
+	(version 20241229)
+	(generator "faebryk_convert")
+	(generator_version "v5")
+	(layer "F.Cu")
+	(tedit "5DC5F6A4")
+	(uuid "9180b209-ad01-4320-bb55-41e201fd4b2a")
+	(property "Reference" "REF**"
+		(at 0 -4)
+		(layer "F.SilkS")
+		(uuid "6a0f0e5d-0aa5-4196-bd0f-e68e0a276e96")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "SMA_L4.4-W2.6-LS5.0-RD"
+		(at 0 4)
+		(layer "F.Fab")
+		(uuid "4b00868c-c7b8-4d1f-a444-51884a43b647")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_circle
+		(center -2.55 1.25)
+		(end -2.52 1.25)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(locked no)
+		(uuid "6f4cda15-f0b3-4465-b067-c5802f0fe271")
+	)
+	(fp_line
+		(start -1.2 -1.4)
+		(end -1.2 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "0b3fa4f3-d5c8-4a8c-8375-76c90033dceb")
+	)
+	(fp_line
+		(start -2.73 -1.4)
+		(end 2.73 -1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "bc72f668-9ce2-4996-91d0-d40271c8866b")
+	)
+	(fp_line
+		(start -2.73 1.4)
+		(end 2.73 1.4)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "17e49070-ee01-4386-9a07-7f77301e7b2c")
+	)
+	(fp_line
+		(start 2.73 -1.4)
+		(end 2.73 -1)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "84ed6b6a-98ec-4f91-9991-8fc7dece9c81")
+	)
+	(fp_line
+		(start 2.73 1.4)
+		(end 2.73 1)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(layers "F.SilkS")
+		(locked no)
+		(uuid "71e8503f-00a3-4577-8c39-36db1bfe5ad9")
+	)
+	(fp_text user "%R"
+		(at 0 0)
+		(layer "F.Fab")
+		(uuid "d3839154-ef08-4a6a-832a-c0017b051912")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "2" smd rect
+		(at 2.19 0 0)
+		(size 1.8 1.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "c37cc96d-5e7b-4ada-8e61-dd0940cabd68")
+	)
+	(pad "1" smd rect
+		(at -2.19 0 0)
+		(size 1.8 1.7)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(uuid "bf8683c4-f70d-47fb-be06-827198e38c3e")
+	)
+	(model "${KIPRJMOD}/../../../src/parts/onsemi_1SMA5916BT3G/SMA_L4.4-W2.6-LS5.0-RD.step"
+		(offset
+			(xyz 0 0 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(embedded_fonts no)
+)

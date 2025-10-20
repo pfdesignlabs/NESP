@@ -1,0 +1,155 @@
+from "faebryk/library/passives/resistor.ato" import Resistor
+from "faebryk/library/passives/capacitor.ato" import Capacitor
+from "parts/passives.ato" import thermistor_10k
+from "blocks/audio_max98357a.ato" import AudioBlock
+from "blocks/display_ili9341_sd.ato" import DisplayBlock
+from "blocks/indicators.ato" import Indicators
+from "blocks/input_buttons.ato" import Buttons
+from "blocks/mcu_esp32s3_wroom1.ato" import MCU_ESP32S3
+from "blocks/power.ato" import PowerTree
+
+
+module NESP:
+    signal VBUS_5V
+    signal VIN_CHG
+    signal SYS
+    signal BATT_PLUS
+    signal net_3V3
+    net_3V3.override_net_name = "3V3"
+    signal GND
+    signal USB_DP
+    signal USB_DM
+    signal CC1
+    signal CC2
+    signal SPI_SCK
+    signal SPI_MOSI
+    signal SPI_MISO
+    signal CS_TFT
+    signal DC
+    signal RST_TFT
+    signal BL_EN
+    signal CS_SD
+    signal I2S_BCLK
+    signal I2S_LRCK
+    signal I2S_DIN
+    signal BTN_UP
+    signal BTN_DOWN
+    signal BTN_LEFT
+    signal BTN_RIGHT
+    signal BTN_A
+    signal BTN_B
+    signal BTN_START
+    signal BTN_SELECT
+    signal BTN_VOLUP
+    signal BTN_VOLDN
+    signal BTN_PWR
+    signal LED_PWR
+    signal LED_USER
+    signal BQ_STAT
+    signal BQ_PG
+    signal TS_NTC
+    signal PROG_SET
+    signal SPK_P
+    signal SPK_N
+
+    PWR = new PowerTree
+    MCU = new MCU_ESP32S3
+    DISP = new DisplayBlock
+    AUD = new AudioBlock
+    BTN = new Buttons
+    IND = new Indicators
+
+    RPROG = new Resistor
+    RPROG.resistance = 1.3kohm +/- 1%
+    RPROG.package = "0603"
+    NTC10k = new thermistor_10k
+    CTS = new Capacitor
+    CTS.capacitance = 100nF +/- 10%
+    CTS.package = "0603"
+
+    # Power distribution
+    PWR.VBUS_5V ~ VBUS_5V
+    PWR.VIN_CHG ~ VIN_CHG
+    PWR.SYS ~ SYS
+    PWR.BATT_PLUS ~ BATT_PLUS
+    PWR.net_3V3 ~ net_3V3
+    PWR.GND ~ GND
+    PWR.CC1 ~ CC1
+    PWR.CC2 ~ CC2
+    PWR.USB_DP ~ USB_DP
+    PWR.USB_DM ~ USB_DM
+    PWR.BQ_STAT ~ BQ_STAT
+    PWR.BQ_PG ~ BQ_PG
+    PWR.TS_NTC ~ TS_NTC
+    PWR.PROG_SET ~ PROG_SET
+
+    MCU.net_3V3 ~ net_3V3
+    MCU.GND ~ GND
+    MCU.USB_DP ~ USB_DP
+    MCU.USB_DM ~ USB_DM
+
+    # Shared SPI bus
+    MCU.SPI_SCK ~ SPI_SCK
+    MCU.SPI_MOSI ~ SPI_MOSI
+    MCU.SPI_MISO ~ SPI_MISO
+    MCU.CS_TFT ~ CS_TFT
+    MCU.DC ~ DC
+    MCU.RST_TFT ~ RST_TFT
+    MCU.BL_EN ~ BL_EN
+    MCU.CS_SD ~ CS_SD
+
+    DISP.net_3V3 ~ net_3V3
+    DISP.GND ~ GND
+    DISP.SPI_SCK ~ SPI_SCK
+    DISP.SPI_MOSI ~ SPI_MOSI
+    DISP.SPI_MISO ~ SPI_MISO
+    DISP.CS_TFT ~ CS_TFT
+    DISP.DC ~ DC
+    DISP.RST_TFT ~ RST_TFT
+    DISP.BL_EN ~ BL_EN
+    DISP.CS_SD ~ CS_SD
+
+    # Audio
+    MCU.I2S_BCLK ~ I2S_BCLK
+    MCU.I2S_LRCK ~ I2S_LRCK
+    MCU.I2S_DIN ~ I2S_DIN
+
+    AUD.net_3V3 ~ net_3V3
+    AUD.GND ~ GND
+    AUD.I2S_BCLK ~ I2S_BCLK
+    AUD.I2S_LRCK ~ I2S_LRCK
+    AUD.I2S_DIN ~ I2S_DIN
+    AUD.SPK_P ~ SPK_P
+    AUD.SPK_N ~ SPK_N
+
+    # Buttons
+    BTN.net_3V3 ~ net_3V3
+    BTN.GND ~ GND
+    MCU.BTN_UP ~ BTN.BTN_UP
+    MCU.BTN_DOWN ~ BTN.BTN_DOWN
+    MCU.BTN_LEFT ~ BTN.BTN_LEFT
+    MCU.BTN_RIGHT ~ BTN.BTN_RIGHT
+    MCU.BTN_A ~ BTN.BTN_A
+    MCU.BTN_B ~ BTN.BTN_B
+    MCU.BTN_START ~ BTN.BTN_START
+    MCU.BTN_SELECT ~ BTN.BTN_SELECT
+    MCU.BTN_VOLUP ~ BTN.BTN_VOLUP
+    MCU.BTN_VOLDN ~ BTN.BTN_VOLDN
+    MCU.BTN_PWR ~ BTN.BTN_PWR
+
+    # Indicators and charger signals
+    IND.net_3V3 ~ net_3V3
+    IND.GND ~ GND
+    IND.LED_PWR ~ LED_PWR
+    IND.LED_USER ~ LED_USER
+    IND.BQ_STAT ~ BQ_STAT
+    IND.BQ_PG ~ BQ_PG
+    MCU.LED_PWR ~ LED_PWR
+    MCU.LED_USER ~ LED_USER
+
+    RPROG.A ~ PROG_SET
+    RPROG.B ~ GND
+    NTC10k.A ~ TS_NTC
+    NTC10k.B ~ GND
+    CTS.A ~ TS_NTC
+    CTS.B ~ GND

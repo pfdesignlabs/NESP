@@ -1,0 +1,33 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component Maxim_Integrated_MAX98357AETE_T_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C910544", date="2025-10-16T09:25:49.411604+00:00", checksum="152cbad38743ce455ae3b57b28fb5f90a2886c0cd18feccdf64a58cd4701b156">
+
+    trait is_atomic_part<manufacturer="Maxim Integrated", partnumber="MAX98357AETE+T", footprint="TQFN-16_L3.0-W3.0-P0.50-BL-EP1.5.kicad_mod", symbol="MAX98357AETE+T.kicad_sym", model="TQFN-16_L3.0-W3.0-P0.50-BL-EP1.5.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C910544", manufacturer="Maxim Integrated", partno="MAX98357AETE+T">
+    trait has_designator_prefix<prefix="U">
+
+    # pins
+    signal BCLK ~ pin 16
+    signal DIN ~ pin 1
+    signal EP ~ pin 17
+    signal GAIN_SLOT ~ pin 2
+    signal GND ~ pin 3
+    GND ~ pin 11
+    GND ~ pin 15
+    signal LRCLK ~ pin 14
+    signal N_C_ ~ pin 5
+    N_C_ ~ pin 6
+    N_C_ ~ pin 12
+    N_C_ ~ pin 13
+    signal OUTN ~ pin 10
+    signal OUTP ~ pin 9
+    signal VDD ~ pin 7
+    VDD ~ pin 8
+    signal nSD_MODE ~ pin 4

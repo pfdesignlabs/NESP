@@ -1,0 +1,137 @@
+from "parts/passives.ato" import bulk_capacitor, capacitor, capacitor_10u_0603, esd_array_4ch, inductor, polyfuse, resistor, tvs_diode
+from "parts/power.ato" import bq24074, jst_ph2, mpm3610a
+from "parts/GCT_USB4085_GF_A/GCT_USB4085_GF_A.ato" import GCT_USB4085_GF_A_package
+from "faebryk/library/passives/resistor.ato" import Resistor
+from "faebryk/library/passives/capacitor.ato" import Capacitor
+
+
+module PowerTree:
+    signal VBUS_5V
+    signal VIN_CHG
+    signal SYS
+    signal BATT_PLUS
+    signal net_3V3
+    net_3V3.override_net_name = "3V3"
+    signal GND
+    signal CC1
+    signal CC2
+    signal USB_DP
+    signal USB_DM
+    signal BQ_STAT
+    signal BQ_PG
+    signal TS_NTC
+    signal PROG_SET
+
+    J1 = new GCT_USB4085_GF_A_package
+    F1 = new polyfuse
+    L1 = new inductor
+    TVS1 = new tvs_diode
+    UESD1 = new esd_array_4ch
+
+    U2 = new bq24074
+    J2 = new jst_ph2
+
+    U3 = new mpm3610a
+    RC_EN_R = new Resistor
+    RC_EN_R.resistance = 100kohm +/- 1%
+    RC_EN_R.package = "0603"
+    RC_EN_C = new Capacitor
+    RC_EN_C.capacitance = 100nF +/- 10%
+    RC_EN_C.package = "0603"
+
+
+    RCC1 = new Resistor
+    RCC1.resistance = 5.1kohm +/- 1%
+    RCC1.package = "0603"
+
+    RCC2 = new Resistor
+    RCC2.resistance = 5.1kohm +/- 1%
+    RCC2.package = "0603"
+
+    C_IN1 = new Capacitor
+    C_IN1.capacitance = 10uF +/- 20%
+    C_IN1.package = "0603"
+
+    C_SYS1 = new Capacitor
+    C_SYS1.capacitance = 22uF +/- 20%
+    C_SYS1.package = "1206"
+
+    C_SYS2 = new Capacitor
+    C_SYS2.capacitance = 22uF +/- 20%
+    C_SYS2.package = "1206"
+
+    C_3V3a = new Capacitor
+    C_3V3a.capacitance = 22uF +/- 20%
+    C_3V3a.package = "1206"
+
+    C_3V3b = new Capacitor
+    C_3V3b.capacitance = 22uF +/- 20%
+    C_3V3b.package = "1206"
+
+    C_3V3c = new Capacitor
+    C_3V3c.capacitance = 100nF +/- 10%
+    C_3V3c.package = "0603"
+
+    # USB-C connector
+    J1.VBUS ~ VBUS_5V
+    J1.GND ~ GND
+    J1.S1 ~ GND
+    J1.Dp1 ~ USB_DP
+    J1.Dp2 ~ USB_DP
+    J1.Dn1 ~ USB_DM
+    J1.Dn2 ~ USB_DM
+    J1.CC1 ~ CC1
+    J1.CC2 ~ CC2
+
+    RCC1.A ~ CC1
+    RCC1.B ~ GND
+    RCC2.A ~ CC2
+    RCC2.B ~ GND
+
+    UESD1.A1 ~ USB_DP
+    UESD1.A2 ~ USB_DM
+    UESD1.A3 ~ CC1
+    UESD1.A4 ~ CC2
+    UESD1.GND ~ GND
+
+    TVS1.A ~ VBUS_5V
+    TVS1.K ~ GND
+
+    F1.IN ~ VBUS_5V
+    F1.OUT ~ L1.IN
+    L1.OUT ~ VIN_CHG
+
+    C_IN1.A ~ VIN_CHG
+    C_IN1.B ~ GND
+
+    U2.IN ~ VIN_CHG
+    U2.SYS ~ SYS
+    U2.BAT ~ BATT_PLUS
+    U2.GND ~ GND
+    U2.TS ~ TS_NTC
+    U2.PROG ~ PROG_SET
+    U2.STAT ~ BQ_STAT
+    U2.PG ~ BQ_PG
+
+    C_SYS1.A ~ SYS
+    C_SYS1.B ~ GND
+    C_SYS2.A ~ SYS
+    C_SYS2.B ~ GND
+
+    J2.BATT_PLUS ~ BATT_PLUS
+    J2.GND ~ GND
+
+    U3.VIN ~ SYS
+    U3.VOUT ~ net_3V3
+    U3.GND ~ GND
+    RC_EN_R.A ~ SYS
+    RC_EN_R.B ~ U3.EN
+    RC_EN_C.A ~ U3.EN
+    RC_EN_C.B ~ GND
+
+    C_3V3a.A ~ net_3V3
+    C_3V3a.B ~ GND
+    C_3V3b.A ~ net_3V3
+    C_3V3b.B ~ GND
+    C_3V3c.A ~ net_3V3
+    C_3V3c.B ~ GND

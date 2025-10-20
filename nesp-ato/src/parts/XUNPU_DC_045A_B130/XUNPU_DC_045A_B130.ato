@@ -1,0 +1,20 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component XUNPU_DC_045A_B130_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C720585", date="2025-10-16T09:45:04.175065+00:00", checksum="8439bddef02ff1b61c715d417f60c419b97ae0524772241b1142928442b2c160">
+
+    trait is_atomic_part<manufacturer="XUNPU", partnumber="DC-045A-B130", footprint="DC-IN-SMD_DC-045A-13A.kicad_mod", symbol="DC-045A-B130.kicad_sym", model="DC-IN-SMD_DC-045A-13A.step">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C720585", manufacturer="XUNPU", partno="DC-045A-B130">
+    trait has_designator_prefix<prefix="DC">
+
+    # pins
+    pin 4
+    pin 1
+    pin 2
+    pin 3

@@ -1,0 +1,24 @@
+#pragma experiment("TRAITS")
+import has_designator_prefix
+import has_part_picked
+import is_atomic_part
+import is_auto_generated
+
+component CET_CEM6056L_package:
+    # This trait marks this file as auto-generated
+    # If you want to manually change it, remove the trait
+    trait is_auto_generated<system="ato_part", source="easyeda:C207745", date="2025-10-16T09:27:09.717311+00:00", checksum="0a69e506f5862d435b42a202c7381296b8d9ef4189a1bc902dd4c864c8e6d09f">
+
+    trait is_atomic_part<manufacturer="CET", partnumber="CEM6056L", footprint="SOP-8_L4.9-W3.9-P1.27-LS6.0-BL.kicad_mod", symbol="CEM6056L.kicad_sym", model="SOP-8_L4.9-W3.9-P1.27-LS6.0-BL-1.STEP">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="C207745", manufacturer="CET", partno="CEM6056L">
+    trait has_designator_prefix<prefix="Q">
+
+    # pins
+    signal D ~ pin 8
+    D ~ pin 7
+    D ~ pin 6
+    D ~ pin 5
+    signal G ~ pin 4
+    signal S ~ pin 3
+    S ~ pin 2
+    S ~ pin 1
